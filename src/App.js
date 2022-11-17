@@ -1,7 +1,11 @@
+import Navbar from "./components/Navbar";
+
+
 function App() {
+
   return (
     <div>
-        <p className="text-3xl font-bold underline">here and there</p>
+        <Navbar />
     </div>
   );
 }
