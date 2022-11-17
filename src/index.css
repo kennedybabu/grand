@@ -33,3 +33,8 @@ body {
     background-color: #000000cb;
     z-index: 2;
 }
+
+
+#mobile-nav li {
+    margin: 1rem 0;
+}
