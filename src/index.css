@@ -32,9 +32,27 @@ body {
     height: 100%;
     background-color: #000000cb;
     z-index: 2;
+    width: 100%;
 }
 
 
 #mobile-nav li {
     margin: 1rem 0;
+}
+
+
+.accomodate-header {
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.unsplash.com/photo-1596436889106-be35e843f974?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+}
+
+
+.header-cover {
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #000000cb;
+    z-index: 2;
+    width: 100%;   
 }
