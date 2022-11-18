@@ -16,7 +16,7 @@ const Navbar = () => {
         </div>
         <div>
             <ol className='hidden'>
-                <li>Home</li>
+                <Link to='/'>Home</Link>
                 <Link to='accomodation'>Accomodation</Link>
                 <li>Gallery</li>
                 <li>News</li>
@@ -25,12 +25,12 @@ const Navbar = () => {
             </ol>
         </div>
         <div className='md:hidden z-40' onClick={(e) => setNav(!nav)}>            
-            {nav ? <MdClose className='text-[#202020]'/> : <RiMenu3Fill />}
+            {nav ? <MdClose className='text-[#202020] fixed right-4 top-12'/> : <RiMenu3Fill />}
         </div>
         {nav ? (
-            <div id='mobile-nav' className='absolute right-0 w-[70%] text-[#202020] top-0 bottom-0 bg-[#ffffff] min-h-screen flex items-center justify-center flex-col'>
+            <div id='mobile-nav' className='fixed right-0 w-[70%] text-[#202020] top-0 bottom-0 bg-[#ffffff] min-h-screen flex items-center justify-center flex-col'>
                 <ol>
-                    <li>Home</li>
+                    <Link to='/'>Home</Link>
                     <Link to='accomodation'>Accomodation</Link>
                     <li>Gallery</li>
                     <li>News</li>

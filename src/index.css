@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Karla:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400&family=Playfair+Display:wght@400;600;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400&family=Sono:wght@200;400&display=swap');
 
 
 body {
@@ -55,4 +55,9 @@ body {
     background-color: #000000cb;
     z-index: 2;
     width: 100%;   
+}
+
+
+.room-more-info {
+    font-family: 'Sono', sans-serif;
 }
