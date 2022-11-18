@@ -1,8 +1,29 @@
 [
     {
-        "id": 12,
-        "room_name": "Savannah",
+        "id": "QSXnxnahf219rue9dnamn",
+        "room_no": "01",
+        "room_name": "Savannah Villa",
         "rate": 200,
-        "booked": "false"
+        "booked": "false",
+        "roomImg_url" : "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+
+    },
+    {
+        "id": "QSXnxnahf219rue9dnamn",
+        "room_no": "01",
+        "room_name": "Savannah Villa",
+        "rate": 200,
+        "booked": "false",
+        "roomImg_url" : "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+
+    },
+    {
+        "id": "QSXnxnahf219rue9dnamn",
+        "room_no": "01",
+        "room_name": "Savannah Villa",
+        "rate": 200,
+        "booked": "false",
+        "roomImg_url" : "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+
     }
 ]
