@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {BsPeopleFill} from 'react-icons/bs'
 import {FaCalendarAlt} from 'react-icons/fa'
+import data from '../data/data.json'
+
 
 const Accomodation = () => {
+    const [rooms, setRooms] = useState([])
+
+    useEffect(() => {
+      setRooms(data)
+    }, [])
+
+    
   return (
     <div className='w-full h-full flex items-center flex-col'>
         <div className='h-[40vh] bg-[black] w-full accomodate-header'>
@@ -15,7 +24,7 @@ const Accomodation = () => {
                 <img className='w-full h-[200px]' src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="/" />
             </div>
             <div className='w-full my-4'>
-                <div className='bg-[#dd9c5c] w-[100px] flex justify-center items-center px-2 py-1'>
+                <div className='bg-[#dd9c5c] text-white w-[100px] flex justify-center items-center px-2 py-1'>
                     <p>Book Now</p>
                 </div>
             </div>
