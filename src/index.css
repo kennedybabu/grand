@@ -61,3 +61,8 @@ body {
 .room-more-info {
     font-family: 'Sono', sans-serif;
 }
+
+
+#mobile-nav > li > a {
+    margin: 1rem;
+}

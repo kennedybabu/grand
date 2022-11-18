@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
     const [nav,setNav] = useState(false)
 
+    const toggleNav = () => {
+        setNav(false)
+    }
+
+
   return (
     <div className='w-full h-[100px] absolute left-0 top-0 px-4 flex items-center justify-between z-50 text-white'>
         <div className='h-full flex flex-col items-center justify-center'>
@@ -29,14 +34,14 @@ const Navbar = () => {
         </div>
         {nav ? (
             <div id='mobile-nav' className='fixed right-0 w-[70%] text-[#202020] top-0 bottom-0 bg-[#ffffff] min-h-screen flex items-center justify-center flex-col'>
-                <ol>
-                    <Link to='/'>Home</Link>
-                    <Link to='accomodation'>Accomodation</Link>
-                    <li>Gallery</li>
-                    <li>News</li>
-                    <li>Shop</li>
-                    <li>Contact</li>
-                </ol>
+                <li className='flex flex-col justify-center'>
+                    <Link to='/' onClick={toggleNav}>Home</Link>
+                    <Link to='accomodation' onClick={toggleNav}>Accomodation</Link>
+                    <Link onClick={toggleNav}>Gallery</Link>
+                    <Link onClick={toggleNav}>News</Link>
+                    <Link onClick={toggleNav}>Shop</Link>
+                    <Link onClick={toggleNav}>Contact</Link>
+                </li>
             </div>
         ): ( null )}
 
