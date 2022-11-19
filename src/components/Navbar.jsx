@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {GiShintoShrine} from 'react-icons/gi'
 import {RiMenu3Fill} from 'react-icons/ri'
 import {MdClose} from 'react-icons/md'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 const Navbar = () => {
     const [nav,setNav] = useState(false)
@@ -14,27 +14,32 @@ const Navbar = () => {
 
     let activeStyle = {
         textDecoration :"underline",
-        color:'#df9a57'
+        color:'#df9a57',
+    
     }
-
-    let activeClassName = "underline"
-
+    // let activeClassName = "underline"
 
   return (
     <div className='w-full h-[100px] absolute left-0 top-0 px-4 flex items-center justify-between z-50 text-white md:px-8'>
-        <div className='h-full flex flex-col items-center justify-center md:text-xl'>
-            <GiShintoShrine className='text-[#df9a57]'/>
-            <h2 className='brand-name'>Grand</h2>
-            <small className='text-[8px] uppercase'>Hotel and Restaurant</small>
-        </div>
+        <Link to='/'>
+            <div className='h-full flex flex-col items-center justify-center md:text-xl'>
+                <GiShintoShrine className='text-[#df9a57]'/>
+                <h2 className='brand-name'>Grand</h2>
+                <small className='text-[8px] uppercase'>Hotel and Restaurant</small>
+            </div>
+        </Link>
         <div>
             <div className='hidden md:flex md:text-[13px]'>
-                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 hover:border-t-2 transition' to='/'>Home</NavLink>
-                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 hover:border-t-2 transition' to='accomodation'>Accomodation</NavLink>
-                <NavLink className='mx-1 hover:border-t-2 transition' >Gallery</NavLink>
-                <NavLink className='mx-1 hover:border-t-2 transition' >News</NavLink>
-                <NavLink className='mx-1 hover:border-t-2 transition' >Shop</NavLink>
-                <NavLink className='mx-1 hover:border-t-2 transition' >Contact</NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1' to='/'>
+                    <div className='hover:underline transition underline-offset-8'>
+                        <p>Home</p>
+                    </div>
+                </NavLink>
+                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 underline-offset-8' to='accomodation'>Accomodation</NavLink>
+                <NavLink className='mx-1 transition underline-offset-8' >Gallery</NavLink>
+                <NavLink className='mx-1 transition' >News</NavLink>
+                <NavLink className='mx-1 transition' >Shop</NavLink>
+                <NavLink className='mx-1 transition' >Contact</NavLink>
             </div>
         </div>
         <div className='md:hidden z-40' onClick={(e) => setNav(!nav)}>            

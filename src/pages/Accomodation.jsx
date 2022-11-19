@@ -13,12 +13,12 @@ const Accomodation = () => {
 
   return (
     <div className='w-full h-full flex items-center flex-col pb-8'>
-         <div className='h-[40vh] bg-[black] w-full accomodate-header'>
-            <div className="header-cover relative px-4">
-                <h2 className='absolute bottom-2 z-[60] text-2xl text-[white]'>Accomodation 01</h2>
+         <div className='h-[35vh] md:h-[20vh] bg-[black] w-full accomodate-header'>
+            <div className="header-cover relative px-2 md:px-8">
+                <h2 className='absolute bottom-2 z-[60] text-2xl text-[white]'>Accomodation</h2>
             </div>            
         </div>
-        <div className='w-full h-full'>
+        <div className='w-full h-full md:w-[70%]'>
             {rooms.map((room) => {
                 return <Room room={room} key={room.id}/>
             })}

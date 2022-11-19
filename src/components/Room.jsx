@@ -4,21 +4,22 @@ import {FaCalendarAlt} from 'react-icons/fa'
 
 const Room = ({room}) => {
 
-    const [isBooked, setIsBooked] = useState(room.booked)
-
-    console.log(room.room_name, room.booked)
+    const [isBooked, setIsBooked] = useState(room.booked)  
 
     const bookRoom = (e) => {
         e.preventDefault()
         setIsBooked(!isBooked)
     }
-
+   
+    const style = {
+        order: 1
+    }
 
   return (
-    <>       
-        <div className='w-full my-8 px-2'>
-            <div className="room w-full flex flex-col h-[200px]">
-                <img className='w-full h-[200px]' src={room.roomImg_url} alt="/" />
+    <div className='md:grid md:grid-cols-2'>       
+        <div className='w-full my-8 px-2' style={room.order ? null : style}>
+            <div className="room w-full flex flex-col h-[200px]  md:h-[300px]">
+                <img className='w-full h-full' src={room.roomImg_url} alt="/" />
             </div>
             <div className='w-full my-4'>
                 <button onClick={(e) => bookRoom(e)} className='bg-[#dd9c5c] text-white w-[100px] flex justify-center items-center px-2 py-1'>
@@ -49,7 +50,7 @@ const Room = ({room}) => {
                 </div>
             </div>
         </div> 
-    </>
+    </div>
   )
 }
 
