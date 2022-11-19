@@ -15,25 +15,30 @@ const Room = ({room}) => {
         order: 1
     }
 
+
+    const startStyle = {
+        alignItems: 'start'
+    }
+
   return (
 
     <div className='md:flex '>       
         <div className='w-full my-8 px-2 md:flex md:flex-2 md:flex-col' style={room.order ? null : style}>
-            <div className="room w-full flex flex-col h-[200px]  md:h-[450px]">
+            <div className="room w-full flex flex-col h-[200px]  md:h-[400px]">
                 <img className='w-full h-full' src={room.roomImg_url} alt="/" />
             </div>
-            <div className='w-full my-4 md:flex md:justify-end'>
+            <div className={room.order ? 'w-full my-4 md:flex' : 'w-full my-4 md:flex md:justify-end' }>
                 <button onClick={(e) => bookRoom(e)} className='bg-[#dd9c5c] text-white w-[100px] flex justify-center items-center px-2 py-1'>
                     {isBooked ? 'Book Now' : 'Booked'}
                 </button>
             </div>
         </div> 
         <div className="room-info px-4 md:flex md:flex-1 md:flex-col md:justify-end">
-            <h1 className='font-[600] text-3xl'>{room.room_no}</h1>
+            <h1 className='font-[600] text-3xl lg:text-4xl lg:font-[800]'>{room.room_no}</h1>
             <div className='h-[25px] my-2 border-l-2 border-black'>
 
             </div>
-            <h2 className='font-[800] text-2xl text-[#dd9c5c]'>{room.room_name}</h2>
+            <h2 className='font-[800] text-2xl lg:text-3xl lg:my-1 text-[#dd9c5c]'>{room.room_name}</h2>
             <p className='font-[400] text-[13px] room-more-info'>
                 {room.description}
             </p>
