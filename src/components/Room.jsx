@@ -16,18 +16,19 @@ const Room = ({room}) => {
     }
 
   return (
-    <div className='md:grid md:grid-cols-2'>       
-        <div className='w-full my-8 px-2' style={room.order ? null : style}>
-            <div className="room w-full flex flex-col h-[200px]  md:h-[300px]">
+
+    <div className='md:flex '>       
+        <div className='w-full my-8 px-2 md:flex md:flex-2 md:flex-col' style={room.order ? null : style}>
+            <div className="room w-full flex flex-col h-[200px]  md:h-[450px]">
                 <img className='w-full h-full' src={room.roomImg_url} alt="/" />
             </div>
-            <div className='w-full my-4'>
+            <div className='w-full my-4 md:flex md:justify-end'>
                 <button onClick={(e) => bookRoom(e)} className='bg-[#dd9c5c] text-white w-[100px] flex justify-center items-center px-2 py-1'>
                     {isBooked ? 'Book Now' : 'Booked'}
                 </button>
             </div>
         </div> 
-        <div className="room-info px-4">
+        <div className="room-info px-4 md:flex md:flex-1 md:flex-col md:justify-end">
             <h1 className='font-[600] text-3xl'>{room.room_no}</h1>
             <div className='h-[25px] my-2 border-l-2 border-black'>
 
@@ -43,7 +44,7 @@ const Room = ({room}) => {
                     <span className='text-[#df9a57]'>|</span>
                     <p>2 people</p>
                 </div>
-                <div className='w-[105px] bg-black text-white  flex items-center justify-center py-1'>
+                <div className='md:ml-1 w-[105px] bg-black text-white  flex items-center justify-center py-1'>
                     <FaCalendarAlt className='text-[#df9a57]'/>
                     <span className='text-[#df9a57]'>|</span>
                     <p>Date</p>

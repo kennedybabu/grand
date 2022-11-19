@@ -20,6 +20,7 @@ const Navbar = () => {
     // let activeClassName = "underline"
 
   return (
+    
     <div className='w-full h-[100px] absolute left-0 top-0 px-4 flex items-center justify-between z-50 text-white md:px-8'>
         <Link to='/'>
             <div className='h-full flex flex-col items-center justify-center md:text-xl'>
