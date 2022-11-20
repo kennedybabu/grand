@@ -1,12 +1,15 @@
 import React, {useState} from 'react'
 import {BsPeopleFill} from 'react-icons/bs'
 import {FaCalendarAlt} from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 
 const Room = ({room}) => {
 
     const [isBooked, setIsBooked] = useState(room.booked)  
     const [startDate, setStartDate] = useState(new Date())
+
+    const navigate = useNavigate()
 
     const bookRoom = (e) => {
         e.preventDefault()
@@ -17,8 +20,9 @@ const Room = ({room}) => {
         order: 1
     }
 
-
-    console.log(startDate)
+    const navigateUser = (e) => {
+        navigate(`/account`)
+    }
 
   return (
 
@@ -28,7 +32,7 @@ const Room = ({room}) => {
                 <img className='w-full h-full' src={room.roomImg_url} alt="/" />
             </div>
             <div className={room.order ? 'w-full my-4 md:flex' : 'w-full my-4 md:flex md:justify-end' }>
-                <button onClick={(e) => bookRoom(e)} className='bg-[#dd9c5c] text-white w-[100px] flex justify-center items-center px-2 py-1'>
+                <button onClick={(e) => navigateUser(e)} className='bg-[#dd9c5c] text-white w-[100px] flex justify-center items-center px-2 py-1'>
                     {isBooked ? 'Book Now' : 'Booked'}
                 </button>
             </div>

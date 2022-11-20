@@ -42,7 +42,7 @@ const Navbar = () => {
             </div>
         </div>
         <div className='md:hidden z-40' onClick={(e) => setNav(!nav)}>            
-            {nav ? <MdClose className='text-[#202020] fixed right-4 top-12'/> : <RiMenu3Fill />}
+            {nav ? <MdClose className='text-[#202020] fixed right-4 top-10 cursor-pointer'/> : <RiMenu3Fill className='cursor-pointer' />}
         </div>
         {nav ? (
             <div id='mobile-nav' className='fixed right-0 w-[70%] text-[#202020] top-0 bottom-0 bg-[#ffffff] min-h-screen flex items-center justify-center flex-col'>
