@@ -31,14 +31,14 @@ const Navbar = () => {
         </Link>
         <div>
             <div className='hidden md:flex md:text-[13px]'>
-                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-2 lg:text-[16px] underline-offset-8'to='/'>
+                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-3 lg:text-[16px] underline-offset-8'to='/'>
                  Home
                 </NavLink>
                 <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-2 lg:text-[16px] underline-offset-8' to='/accomodation'>Accomodation</NavLink>
-                <NavLink className='mx-1 lg:mx-2 lg:text-[16px] transition underline-offset-8' >Gallery</NavLink>
-                <NavLink className='mx-1 lg:mx-2 lg:text-[16px] transition' >News</NavLink>
-                <NavLink className='mx-1 lg:mx-2 lg:text-[16px] transition' >Shop</NavLink>
-                <NavLink className='mx-1 lg:mx-2 lg:text-[16px] transition' >Contact</NavLink>
+                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition underline-offset-8' >Gallery</NavLink>
+                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >News</NavLink>
+                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Shop</NavLink>
+                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Contact</NavLink>
             </div>
         </div>
         <div className='md:hidden z-40' onClick={(e) => setNav(!nav)}>            

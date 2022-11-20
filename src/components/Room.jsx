@@ -2,9 +2,11 @@ import React, {useState} from 'react'
 import {BsPeopleFill} from 'react-icons/bs'
 import {FaCalendarAlt} from 'react-icons/fa'
 
+
 const Room = ({room}) => {
 
     const [isBooked, setIsBooked] = useState(room.booked)  
+    const [startDate, setStartDate] = useState(new Date())
 
     const bookRoom = (e) => {
         e.preventDefault()
@@ -16,9 +18,7 @@ const Room = ({room}) => {
     }
 
 
-    const startStyle = {
-        alignItems: 'start'
-    }
+    console.log(startDate)
 
   return (
 
@@ -49,10 +49,11 @@ const Room = ({room}) => {
                     <span className='text-[#df9a57]'>|</span>
                     <p>2 people</p>
                 </div>
-                <div className='md:ml-1 w-[105px] bg-black text-white  flex items-center justify-center py-1'>
+                <div className='md:ml-1 cursor-pointer w-[105px] bg-black text-white  flex items-center justify-center py-1'>
                     <FaCalendarAlt className='text-[#df9a57]'/>
                     <span className='text-[#df9a57]'>|</span>
-                    <p>Date</p>
+                    <p>date</p>
+                    {/* <input onChange={(e) => setStartDate(e.target.value)} className='w-full cursor-pointer bg-white text-black' type='date' id='start' name='vacation-start' value='2022-11-20' min="2022-11-20" max="2050-01-01" /> */}
                 </div>
             </div>
         </div> 
