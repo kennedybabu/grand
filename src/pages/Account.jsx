@@ -5,7 +5,9 @@ const Account = () => {
   return (
     <div className='w-full h-screen'>
         <Header text={'Account'} />
-        <p>here and there</p>
+        <div className='w-full h-full flex flex-col items-center justify-center'>
+            <p>trials and errors</p>
+        </div>
     </div>
   )
 }
