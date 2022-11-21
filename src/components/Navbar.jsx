@@ -2,10 +2,16 @@ import React, { useState } from 'react'
 import {GiShintoShrine} from 'react-icons/gi'
 import {RiMenu3Fill} from 'react-icons/ri'
 import {MdClose} from 'react-icons/md'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useNavigate } from 'react-router-dom'
+import { UserAuth } from '../context/AuthContext'
 
 const Navbar = () => {
     const [nav,setNav] = useState(false)
+    const {user, logOut} = UserAuth()
+    const [error, setError] = useState('')
+
+
+    const navigate = useNavigate()
 
     const toggleNav = () => {
         setNav(false)
@@ -17,7 +23,16 @@ const Navbar = () => {
         color:'#df9a57',
     
     }
-    // let activeClassName = "underline"
+
+    const handleLogout = async() => {
+        try {
+            await logOut()
+            navigate('/')
+        } catch(error) {
+            setError(error)
+        }
+    }
+   
 
   return (
 
@@ -36,10 +51,14 @@ const Navbar = () => {
                 </NavLink>
                 <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-2 lg:text-[16px] underline-offset-8' to='/accomodation'>Accomodation</NavLink>
                 <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition underline-offset-8' >Gallery</NavLink>
-                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >News</NavLink>
                 <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Shop</NavLink>
-                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Contact</NavLink>
-                <NavLink to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' >SignUp</NavLink>
+                {user?.email ? (
+                    <NavLink onClick={handleLogout} className='mx-1 lg:mx-3 lg:text-[16px] transition' >logout</NavLink>
+
+                ) : (
+                    <NavLink to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' style={({isActive}) => isActive ? activeStyle : undefined} >SignUp</NavLink>
+
+                )}
             </div>
         </div>
         <div className='md:hidden z-40' onClick={(e) => setNav(!nav)}>            
@@ -51,9 +70,15 @@ const Navbar = () => {
                     <NavLink to='/' onClick={toggleNav}>Home</NavLink>
                     <NavLink to='accomodation' onClick={toggleNav}>Accomodation</NavLink>
                     <NavLink onClick={toggleNav}>Gallery</NavLink>
-                    <NavLink onClick={toggleNav}>News</NavLink>
                     <NavLink onClick={toggleNav}>Shop</NavLink>
-                    <NavLink onClick={toggleNav}>Contact</NavLink>
+                    {user?.email ? (
+                    <NavLink onClick={handleLogout} className='mx-1 lg:mx-3 lg:text-[16px] transition' >logout</NavLink>
+
+                    ) : (
+
+                    <NavLink to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' >SignUp</NavLink>
+
+                    )}
                 </li>
             </div>
         ): ( null )}
