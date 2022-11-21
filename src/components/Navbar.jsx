@@ -39,6 +39,7 @@ const Navbar = () => {
                 <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >News</NavLink>
                 <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Shop</NavLink>
                 <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Contact</NavLink>
+                <NavLink to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' >SignUp</NavLink>
             </div>
         </div>
         <div className='md:hidden z-40' onClick={(e) => setNav(!nav)}>            
