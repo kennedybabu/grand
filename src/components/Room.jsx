@@ -21,7 +21,7 @@ const Room = ({room}) => {
     }
 
     const navigateUser = (e) => {
-        navigate(`/account`)
+        navigate(`/account/${room.id}`)
     }
 
   return (

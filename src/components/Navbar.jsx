@@ -8,8 +8,6 @@ import { UserAuth } from '../context/AuthContext'
 const Navbar = () => {
     const [nav,setNav] = useState(false)
     const {user, logOut} = UserAuth()
-    const [error, setError] = useState('')
-
 
     const navigate = useNavigate()
 
@@ -28,8 +26,9 @@ const Navbar = () => {
         try {
             await logOut()
             navigate('/')
+            setNav(false)
         } catch(error) {
-            setError(error)
+            console.log(error)
         }
     }
    
@@ -46,17 +45,17 @@ const Navbar = () => {
         </Link>
         <div>
             <div className='hidden md:flex md:text-[13px]'>
-                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-3 lg:text-[16px] underline-offset-8'to='/'>
+                <NavLink onClick={toggleNav} style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-3 lg:text-[16px] underline-offset-8'to='/'>
                  Home
                 </NavLink>
-                <NavLink style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-2 lg:text-[16px] underline-offset-8' to='/accomodation'>Accomodation</NavLink>
-                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition underline-offset-8' >Gallery</NavLink>
-                <NavLink className='mx-1 lg:mx-3 lg:text-[16px] transition' >Shop</NavLink>
+                <NavLink onClick={toggleNav}  style={({isActive}) => isActive ? activeStyle : undefined} className='mx-1 lg:mx-2 lg:text-[16px] underline-offset-8' to='/accomodation'>Accomodation</NavLink>
+                <NavLink onClick={toggleNav}  className='mx-1 lg:mx-3 lg:text-[16px] transition underline-offset-8' >Gallery</NavLink>
+                <NavLink onClick={toggleNav}  className='mx-1 lg:mx-3 lg:text-[16px] transition' >Shop</NavLink>
                 {user?.email ? (
-                    <NavLink onClick={handleLogout} className='mx-1 lg:mx-3 lg:text-[16px] transition' >logout</NavLink>
+                    <NavLink  onClick={handleLogout} className='mx-1 lg:mx-3 lg:text-[16px] transition' >logout</NavLink>
 
                 ) : (
-                    <NavLink to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' style={({isActive}) => isActive ? activeStyle : undefined} >SignUp</NavLink>
+                    <NavLink onClick={handleLogout} to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' style={({isActive}) => isActive ? activeStyle : undefined} >SignUp</NavLink>
 
                 )}
             </div>
@@ -76,7 +75,7 @@ const Navbar = () => {
 
                     ) : (
 
-                    <NavLink to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' >SignUp</NavLink>
+                    <NavLink onClick={toggleNav} to="/signup" className='mx-1 lg:mx-3 lg:text-[16px] transition' >SignUp</NavLink>
 
                     )}
                 </li>

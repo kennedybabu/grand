@@ -39,8 +39,8 @@ const Login = () => {
        <div className='w-full my-4 lg:my-0 flex flex-col items-center justify-center'>            
       
         <h2 className='text-2xl font-bold my-6'>welcome</h2>
-          <small className='w-[200px] mx-auto'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</small>
-        <form className='max-w-[550px] flex flex-col' onSubmit={handleSubmit}> 
+          <small className='w-[250px] text-center mx-auto'>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</small>
+        <form className='w-full flex flex-col' onSubmit={handleSubmit}> 
             {error ? (
               <div className='w-full bg-red-400 p-1 text-black'>              
                 <p>{error}</p>    
