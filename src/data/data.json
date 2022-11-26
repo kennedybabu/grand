@@ -1,7 +1,7 @@
 [
 
     {
-        "id": "12%vvgvqQbn1HJhnEllnMa",
+        "id": 111,
         "room_no": "01",
         "room_name": "Savannah Villa",
         "rate": 500,
@@ -13,7 +13,7 @@
     },
 
     {
-        "id": "QSXnxnahf219rue9dnamn",
+        "id": 121,
         "room_no": "02",
         "room_name": "Kilimanjaro Villa",
         "rate": 800,
@@ -24,7 +24,7 @@
 
     },
     {
-        "id": "zOJKJNSjaqufqAIOnmcOoww",
+        "id": 131,
         "room_no": "03",
         "room_name": "Maanzooni Villa",
         "rate": 1500,
